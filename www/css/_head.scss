@@ -1,0 +1,105 @@
+/* ----------------------------------------------
+ Reset
+ ---------------------------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    background-position:center;
+    background-repeat:no-repeat;
+    @include box-sizing(border-box);
+}
+
+/* ----------------------------------------------
+ Main
+ ---------------------------------------------- */
+
+html, body, section, header, footer {
+    width: 100%;
+}
+
+body {
+    min-width: 1240px;
+    font: 16px $lato; 
+    color: #000;
+    background-color: #f4f4f4;
+}
+header, footer, div, nav, ul, form {
+     &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+section, .container {
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    width: 1220px;
+    margin: 0 auto;
+}
+
+/* ----------------------------------------------
+ Fonts Paragrahps
+ ---------------------------------------------- */
+
+h1 {
+    font: 38px $lato-heavy;
+}
+h2 {
+    font: 25px $lato-bold;
+}
+h3 {
+    font: 22px $lato-semibold;
+}
+h4 {
+    font: 18px $lato-medium;
+}
+h5 {
+    font: 17px $lato-semibold;
+}
+
+/* ----------------------------------------------
+ Links Img
+ ---------------------------------------------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+/* ----------------------------------------------
+ Form Buttons Inputs
+ ---------------------------------------------- */
+
+button, input, textarea {
+    outline: none;
+    border: none;
+    @include box-shadow(none);
+}
+button {
+    cursor: pointer;
+}
+
+/* ---------------------------------------------- /*
+ Transition elsements
+/* ---------------------------------------------- */
+
+a, button {
+    @include transition(all 0.2s ease-in-out);
+}
+
+/* ----------------------------------------------
+ Header
+ ---------------------------------------------- */

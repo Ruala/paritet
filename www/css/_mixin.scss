@@ -1,0 +1,53 @@
+@mixin box-sizing($box-sizing) {
+    -moz-box-sizing: $box-sizing;
+    -webkit-box-sizing: $box-sizing;
+    box-sizing: $box-sizing;
+}
+
+@mixin transition($transitions...) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -o-transition: $transitions;
+    transition: $transitions;
+}
+
+@mixin border-radius($rads...) {
+    -moz-border-radius: $rads;
+    -webkit-border-radius: $rads;
+    border-radius: $rads;
+}
+
+@mixin box-shadow($shadows...) {
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+@mixin user-select($user-select) {
+    -ms-user-select: $user-select;
+    -moz-user-select: $user-select;
+    -webkit-user-select: $user-select;
+    user-select: $user-select;
+}
+
+@mixin transform($transform) {
+    -ms-transform: $transform;
+    -moz-transform: $transform;
+    -webkit-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin transform-origin($transform-origins...) {
+    -ms-transform-origin: $transform-origins;
+    -moz-transform-origin: $transform-origins;
+    -webkit-transform-origin: $transform-origins;
+    -o-transform-origin: $transform-origins;
+    transform-origin: $transform-origins;
+}
+
+@mixin column-count($column-count) {
+    -webkit-column-count: $column-count;
+    -moz-column-count: $column-count;
+    column-count: $column-count;
+}
