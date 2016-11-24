@@ -4,7 +4,6 @@
 @import 'fonts';
 @import 'variables';
 /*@import 'head';*/
-@import 'media';
 @import "../libs/icon_flag/sass/flag-icon";
 
 /* ----------------------------------------------
@@ -49,6 +48,7 @@ section {
 }
 
 .container {
+    width: 100%;
     max-width: 1240px;
     padding: 0 20px;
     margin: 0 auto;
@@ -140,7 +140,10 @@ button {
 }
 
 .more-btn {
-    float: left;
+    position: absolute;
+    z-index: 2;
+    bottom: 5%;
+    left: 5%;
     padding: 10px 36px 11px 36px;
     background-color: $category-btn;
     &:hover {
@@ -235,8 +238,10 @@ header {
         position: relative;
         z-index: 2;
         padding-left: 40px;
-        margin-right: 40px;
         line-height: 30px;
+        + a {
+            margin-left: 40px;
+        }
         &::before {
             content: '';
             display: block;
@@ -293,7 +298,7 @@ header {
     > li {
         float: left;
         > a {
-            padding: 23px 20px 24px 20px;
+            padding: 23px 20px 24px;
             text-transform: uppercase;
         }
         &:hover .top-menu__lvl2 {
@@ -334,6 +339,11 @@ header {
 .pageheader__slider {
     position: relative;
     z-index: 2;
+    height: 750px;
+    overflow: hidden;
+    img {
+        width: 1920px;
+    }
     .slide__info {
         position: absolute;
         z-index: 2;
@@ -522,7 +532,7 @@ footer {
         color: $green;
     }
     h2, p {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
 
@@ -628,6 +638,10 @@ footer {
     p {
         color: #212121;
         font-weight: bold;
+        img {
+            width: auto;
+            vertical-align: top;
+        }
     }
     .icon {
         width: 113px;
@@ -804,5 +818,7 @@ Pop up
   overflow:hidden;
   z-index: 99;
 }*/
+
+@import 'media';
 
 

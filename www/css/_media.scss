@@ -1,33 +1,65 @@
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .top-menu {
-        .container-fluid > .navbar-collapse, .container-fluid > .navbar-header {
-            margin-right: -15px;
-            margin-left: -15px;
+/* Large devices */
+
+/* Medium devices */
+@media (max-width:1199px) {
+    .top-line {
+        .phone {
+            font-size: 16px;
         }
-        .navbar-toggle {
-            display: block;
+        form {
+            width: 35%;
         }
-        .navbar-header {
-            float: none;
+        .lang {
+            margin-left: 10px;
         }
-        .navbar {
-            @include border-radius(0);
+    }
+    .top-menu > li > a {
+        padding: 23px 10px 24px;
+        text-transform: uppercase;
+    }
+    .category__block > h2 {
+        bottom: 30px;
+    }
+    .category__info {
+        h2, p {
+            margin-bottom: 5px;
         }
-        .navbar-nav, .navbar-nav > li {
-            float: none;
+        h2 {
+            font-size: 14px;
         }
-        .navbar-collapse.collapse {
-            display: none !important;
+        p {
+            font-size: 12px;
         }
-        .collapse.in {
-            display: block !important;
+    }
+    .news .line-block > div + div {
+        padding-left: 30px;
+    }
+    .footer__develop {
+        min-width: 500px;
+        > div {
+            max-width: 320px;
+        }
+    }
+    .footer__logo {
+        margin-right: 30px;
+    }
+    .footer__search-form {
+        width: 420px;
+        .search-form {
+            width: 200px;
         }
     }
 }
+@media (max-width: 1023px) {
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+}
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+/* Small devices */
+@media (max-width: 991px) {
+
+}
+
+/* Extra small devices */
+@media (max-width: 767px) {
+
+}
