@@ -1614,6 +1614,7 @@ header {
 .pageheader {
   padding: 0; }
   .pageheader .container {
+    max-width: 1920px;
     padding: 0; }
 
 .pageheader__slider {
@@ -1628,6 +1629,7 @@ header {
     z-index: 2;
     top: 55%;
     left: 45%;
+    max-width: 600px;
     color: #fff;
     -ms-transform: skew(-15deg) translate(-50%, -50%);
     -moz-transform: skew(-15deg) translate(-50%, -50%);

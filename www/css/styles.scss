@@ -367,6 +367,7 @@ header {
 .pageheader {
     padding: 0;
     .container {
+        max-width: 1920px;
         padding: 0;
     }
 }
@@ -383,6 +384,7 @@ header {
         z-index: 2;
         top: 55%;
         left: 45%;
+        max-width: 600px;
         color: #fff;
         @include transform(skew(-15deg) translate(-50%, -50%));
         p, ul {
