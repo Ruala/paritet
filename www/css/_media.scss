@@ -75,23 +75,27 @@
     }
     header {
         height: 120px;
+        padding-top: 45px;
     }
     .header__links {
         display: none;
     }
-    .header__btn {
-        width: 34%;
+    .header__logo {
+        width: 39%;
     }
-    .ordered-transportation-btn {
-        margin-top: 10px;
+    .header__btn {
+        width: 36%;
     }
     .navbar {
         display: none;
     }
+    .mobile-nav {
+        display: block;
+    }
     .pageheader__slider {
         height: 650px;
         .slide__info {
-            top: 50%;
+            top: 45%;
         }
         .title-box {
             padding: 20px 40px;
@@ -115,8 +119,13 @@
             font-size: 12px;
         }
     }
-    .work-process__slider .slide__info {
-        padding: 70px 30px;
+    .work-process__slider {
+        .slide__info {
+            padding: 70px 30px;
+        }
+        .slide-inner img {
+            left: -20%;
+        }
     }
     .footer__menu {
         min-width: 430px;
@@ -159,8 +168,14 @@
         height: 80px;
         padding-top: 15px;
     }
+    .header__logo {
+        width: 35%;
+    }
     .header__btn {
-        width: 50%;
+        width: 45%;
+    }
+    .mobile-nav {
+        width: 20%;
     }
     /*.ordered-transportation-btn {
         padding: 9px 10px 9px 40px;
@@ -178,6 +193,7 @@
         }
         .slide__info {
             width: 75%;
+            top: 30%;
             left: 42%;
         }
         .about-box {
@@ -208,8 +224,16 @@
             font-size: 10px;
         }
     }*/
-    .work-process__slider .slide__info p {
-        font-size: 14px;
+    .work-process__slider {
+        .slide-inner {
+            width: 100%;
+        }
+        .slide__info p {
+            font-size: 14px;
+        }
+    }
+    .directions, .news {
+        display: none;
     }
     .directions .line-block > div {
         width: 33.33%;
@@ -256,13 +280,27 @@
     }
 }
 @media (max-width: 599px) {
+    .header__logo {
+        width: 45%;
+    }
+    .header__btn {
+        width: 36%;
+        float: right;
+    }
+    .mobile-nav {
+        width: 15%;
+        min-width: 50px;
+    }
+    .hamburger {
+        width: 50px;
+        padding: 5px 15px 9px 0;
+    }
     .ordered-transportation-btn {
-        padding: 9px 10px 9px 40px;
+        padding: 9px 10px;
         margin-top: 0;
         font-size: 10px;
         &::before {
-            top: 16px;
-            left: 10px;
+            display: none;
         }
     }
     .pageheader__slider {
@@ -295,6 +333,9 @@
     }
     .work-process__slider {
         padding: 0;
+        .slide-inner img {
+            width: 360px;
+        }
         .slide__image, .slide__info {
             height: 150px;
         }
@@ -306,7 +347,7 @@
             }
             span {
                 margin-right: 10px;
-                font-size: 50px;
+                font-size: 44px;
             }
         }
     }
