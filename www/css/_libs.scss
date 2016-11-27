@@ -103,3 +103,9 @@ html.mm-opening .hamburger--collapse .hamburger-inner::before {
         @include transform(rotate(45deg));
     }
 }
+
+/*fixed menu*/
+.js-top-fixed {
+    top: 0!important;
+    position: fixed!important;
+}

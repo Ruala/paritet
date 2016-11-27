@@ -129,6 +129,11 @@ html.mm-opening .hamburger--collapse .hamburger-inner::before {
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
 
+/*fixed menu*/
+.js-top-fixed {
+  top: 0 !important;
+  position: fixed !important; }
+
 /*@import 'head';*/
 .flag-icon-background, .flag-icon {
   background-size: contain;

@@ -127,20 +127,8 @@
     }
 })();
 
-/*helpers*/
-/*(function(){
-    //Returns true if it is a DOM element
-    $.prototype.isElement = function (o) {
-        return (
-            typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
-            o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string"
-        );
-    }
-})();*/
 
-
-
-/*Form controller*/
+/*Form class*/
 (function(){
     function FormController(options) {
         this._submitSelector = options.submitSelector || 'input[type="submit"]';
@@ -417,7 +405,7 @@
     };
 })();
 
-/*Fixed menu */
+/*Fixed element class*/
 (function(){
     /*Menu controller fixed*/
     function FixedElement(options) {
@@ -428,21 +416,19 @@
         
     }
     FixedElement.prototype.init = function () {
-        var self = this;
-        var setActiveLi = self.pageScrollListener.call(self);
+        var setActiveLi = this.pageScrollListener.call(this);
         
-        
-        $(window).load(function () {
-            self._staticMenuPosition = self.getCoords(self._menu).top;
-            self.toggleMenuPosition();
-            setActiveLi();
-            
-            $(window)
-                .scroll(self.toggleMenuPosition.bind(self))
-                .scroll(setActiveLi);
+        $(window).on({
+            'load': function () {
+                this.getStaticMenuPos();
+                setActiveLi();
+            }.bind(this),
+            'scroll': function () {
+                this.toggleMenuPosition.call(this);
+                setActiveLi();
+            }.bind(this),
+            'resize': this.getStaticMenuPos.bind(this)
         });
-        
-        
     };
     FixedElement.prototype.getCoords = function (elem) {
         var box = elem.getBoundingClientRect();
@@ -452,10 +438,11 @@
             left: box.left + pageXOffset
         };
     };
-    FixedElement.prototype.toggleMenuPosition = function () {
-        if (window.pageYOffset <= this._staticMenuPosition && this._menuIsFixed) {
+    FixedElement.prototype.toggleMenuPosition = function (off) {
+        if (window.pageYOffset <= this._staticMenuPosition && this._menuIsFixed || off) {
             $(this._menu).removeClass(this._fixedClass);
             this._menuIsFixed = false;
+            return;
         } else if (window.pageYOffset > this._staticMenuPosition && !this._menuIsFixed){
             $(this._menu).addClass(this._fixedClass);
             this._menuIsFixed = true;
@@ -512,6 +499,11 @@
         
         return checkMenuPos;
     };
+    FixedElement.prototype.getStaticMenuPos = function () {
+        this.toggleMenuPosition(true);
+        this._staticMenuPosition = this.getCoords(this._menu).top;
+        this.toggleMenuPosition();
+    };
     
     $.fn.fixedElem = function () {
         var options = typeof arguments[0] === 'object' ? arguments[0] : {};
@@ -524,6 +516,7 @@
         });
     };
 })();
+
 
 $(document).ready(function () {
     /*slider*/
