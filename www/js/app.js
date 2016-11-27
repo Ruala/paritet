@@ -416,7 +416,7 @@
         
     }
     FixedElement.prototype.init = function () {
-        var setActiveLi = this.pageScrollListener.call(this);
+        var setActiveLi = this.pageScrollListener();
         
         $(window).on({
             'load': function () {
@@ -424,7 +424,7 @@
                 setActiveLi();
             }.bind(this),
             'scroll': function () {
-                this.toggleMenuPosition.call(this);
+                this.toggleMenuPosition();
                 setActiveLi();
             }.bind(this),
             'resize': this.getStaticMenuPos.bind(this)
@@ -454,7 +454,7 @@
         var links = this._menu.querySelectorAll('a[href^="#"]');
         var self = this;
         
-        var checkMenuPos = function () {
+        return function () {
             var coordsMenu = self._menu.getBoundingClientRect();
             var elem = document.elementFromPoint(self._menu.offsetWidth/2, coordsMenu.bottom + 50);
             
@@ -496,8 +496,6 @@
             }
             
         };
-        
-        return checkMenuPos;
     };
     FixedElement.prototype.getStaticMenuPos = function () {
         this.toggleMenuPosition(true);
