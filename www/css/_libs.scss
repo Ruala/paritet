@@ -111,5 +111,21 @@ html.mm-opening .hamburger--collapse .hamburger-inner::before {
 /*fixed menu*/
 .js-top-fixed {
     top: 0!important;
+    left: 0!important;
     position: fixed!important;
+}
+
+@media (max-width: 599px) {
+    .js-top-fixed-mobile {
+        top: 0!important;
+        left: 0!important;
+        position: fixed!important;
+    }
+}
+/*form*/
+.form-success {
+    border-color: green!important;
+}
+.form-fail {
+    border-color: red!important;
 }

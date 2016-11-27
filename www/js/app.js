@@ -9,6 +9,9 @@
 * валидация +
 * стилизировать валидацию
 * кнопка вверх +
+* стили на слайдер
+* оптимизация картинок
+* вынести критический css
 * */
 
 'use strict';
@@ -106,27 +109,7 @@
         });
     }
 })();
-/*Custom events IE9+*/
-(function(){
-    try {
-        new CustomEvent("IE has CustomEvent, but doesn't support constructor");
-    } catch (e) {
-        
-        window.CustomEvent = function(event, params) {
-            var evt;
-            params = params || {
-                    bubbles: false,
-                    cancelable: false,
-                    detail: undefined
-                };
-            evt = document.createEvent("CustomEvent");
-            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-            return evt;
-        };
-        
-        CustomEvent.prototype = Object.create(window.Event.prototype);
-    }
-})();
+
 
 
 /*Form class*/
@@ -550,9 +533,15 @@ $(document).ready(function () {
     (function(){
         var $inputPhone = $('[name="phone"]');
         var $contactForm = $('.contact-form');
+        var $orderForm = $('.order-form');
         
         $inputPhone.mask("+7 (999) 999-99-99");  //init mask
-        $contactForm.formController();
+        $contactForm.formController({
+            submitSelector: '.btn[type="submit"]'
+        });
+        $orderForm.formController({
+            submitSelector: '.btn[type="submit"]'
+        });
     })();
     
     /*ScrollUp button controller (self init)*/
@@ -605,8 +594,13 @@ $(document).ready(function () {
     /*fixed menu*/
     (function(){
         var $topMenu = $('[data-component="fixedMenu"]');
-    
+        var $mobileHeader = $('[data-component="fixedMenuMobile"]');
+        
         $topMenu.fixedMenu({
+            pageSearch: false
+        });
+        $mobileHeader.fixedMenu({
+            fixedClass: 'js-top-fixed-mobile',
             pageSearch: false
         });
     })();

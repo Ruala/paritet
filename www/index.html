@@ -54,7 +54,7 @@
             </div><!--container-->
         </div>
 
-        <header>
+        <header class="Fixed" data-component="fixedMenuMobile">
             <div class="container">
                 <nav id="m-menu-btn-wrapper" class="mobile-nav">
                     <div id="hamburger" class="menu-button hamburger hamburger--collapse js-hamburger">
@@ -832,10 +832,10 @@
                 <p>Чтобы узнать цену или заказать услугу, заполните нижеприведенную форму:</p>
 
                 <form class="contact-form" method="post" action="mail/mailer.php">
-                    <input type="text" name="name" placeholder="Контактное лицо" required>
-                    <input name="phone" placeholder="Телефон" required>
-                    <input type="email" name="email" placeholder="E-mail" required>
-                    <textarea name="message" placeholder="Текст запроса" required></textarea>
+                    <input type="text" name="name" data-name="Контактное лицо" placeholder="Контактное лицо" required>
+                    <input type="text" name="phone" data-name="Телефон" placeholder="Телефон" required>
+                    <input type="email" name="email" data-name="E-mail" placeholder="E-mail" required>
+                    <textarea name="message" data-name="Текст запроса" placeholder="Текст запроса" required></textarea>
 
                     <div>
                         <button class="btn" type="submit">Отправить</button>
@@ -916,6 +916,7 @@
     <script src="libs/slick/slick.min.js"></script>
     <script src="libs/maskedinput/jquery.maskedinput.min.js"></script>
     <script src="libs/mmenu/jquery.mmenu.min.js"></script>
+    <!--<script src="libs/mmenu/jquery.mmenu.fixedelements.min.js"></script>-->
     <script src="js/app.js"></script>
 </body>
 </html>
