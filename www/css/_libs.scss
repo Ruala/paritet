@@ -1,0 +1,105 @@
+/*Mobile menu*/
+#m-menu:not( .mm-menu ) {
+    display: none;
+}
+.mobile-nav {
+    display: none;
+    height: 70px;
+    padding: 13px 0;
+    background-color: transparent;
+    width: 100%;
+    z-index: 50;
+}
+.menu-button {
+    cursor: pointer;
+    padding: 0;
+}
+.hamburger {
+    padding: 9px 15px;
+    background-color: transparent;
+    width: 70px;
+    margin: 0;
+}
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    position: relative; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+}
+.hamburger-inner {
+    &::before, &::after {
+        content: "";
+        display: block; }
+    &::before {
+        top: -10px; }
+    &::after {
+        bottom: -10px; }
+}
+
+.hamburger--collapse {
+    .hamburger-inner {
+        top: auto;
+        bottom: 0;
+        @include transition(transform 0.15s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19));
+        &::after {
+            top: -20px;
+            @include transition(top 0.3s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear);
+        }
+        &::before {
+            @include transition(top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19));
+        }
+    }
+}
+
+html.mm-opening .hamburger--collapse .hamburger-inner {
+    @include transform(translate3d(0, -10px, 0) rotate(-45deg));
+    @include transition(transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1));
+}
+html.mm-opening .hamburger--collapse .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    @include transition(top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear)
+}
+html.mm-opening .hamburger--collapse .hamburger-inner::before {
+    top: 0;
+    @include transform(rotate(-90deg));
+    @include transition(top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1));
+}
+
+
+/*scroll top btn*/
+#scrollUp {
+    position: fixed;
+    width: 44px;
+    height: 36px;
+    background-color: $green;
+    border-radius: 5px;
+    right: 10px;
+    bottom: -40px;
+    display: none;
+    @include transition(background-color 0.2s ease-in-out);
+    cursor: pointer;
+    z-index: 20;
+    &:hover {
+        background: $blue;
+    }
+    .upButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -3px;
+        margin-left: -4px;
+        opacity: 1;
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+        @include transform(rotate(45deg));
+    }
+}
