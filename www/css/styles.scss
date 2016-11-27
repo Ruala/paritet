@@ -586,7 +586,7 @@ footer {
         margin-bottom: 30px;
         font: 12px $arial;
         background: #fff;
-        border: 1px solid transparent;
+        border: 1px solid transparent; //
         @include border-radius(3px);
     }
     input {
