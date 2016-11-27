@@ -7,6 +7,7 @@
 * фикс меню +
 * фенсибокс +
 * валидация +
+* стилизировать валидацию
 * кнопка вверх +
 * */
 
@@ -405,17 +406,16 @@
     };
 })();
 
-/*Fixed element class*/
+/*Fixed menu class*/
 (function(){
-    /*Menu controller fixed*/
-    function FixedElement(options) {
+    function FixedMenu(options) {
         this._menu = options.menu;
         this._fixedClass = options.fixedClass || 'js-top-fixed';
         this._menuIsFixed = false;
         this._staticMenuPosition = -1;
-        
+        this._isPageSearch = options.pageSearch || true;
     }
-    FixedElement.prototype.init = function () {
+    FixedMenu.prototype.init = function () {
         var setActiveLi = this.pageScrollListener();
         
         $(window).on({
@@ -430,7 +430,7 @@
             'resize': this.getStaticMenuPos.bind(this)
         });
     };
-    FixedElement.prototype.getCoords = function (elem) {
+    FixedMenu.prototype.getCoords = function (elem) {
         var box = elem.getBoundingClientRect();
         
         return {
@@ -438,23 +438,30 @@
             left: box.left + pageXOffset
         };
     };
-    FixedElement.prototype.toggleMenuPosition = function (off) {
+    FixedMenu.prototype.toggleMenuPosition = function (off) {
+        var $menu = $(this._menu);
+        
+        if ($menu.is(':hidden')) return;
+        
         if (window.pageYOffset <= this._staticMenuPosition && this._menuIsFixed || off) {
-            $(this._menu).removeClass(this._fixedClass);
+            $menu.removeClass(this._fixedClass);
             this._menuIsFixed = false;
             return;
         } else if (window.pageYOffset > this._staticMenuPosition && !this._menuIsFixed){
-            $(this._menu).addClass(this._fixedClass);
+            $menu.addClass(this._fixedClass);
             this._menuIsFixed = true;
         }
     };
-    FixedElement.prototype.pageScrollListener = function () {
+    FixedMenu.prototype.pageScrollListener = function () {
         var activeLink = null;
         var activeSection = null;
         var links = this._menu.querySelectorAll('a[href^="#"]');
         var self = this;
         
         return function () {
+            if (!self._isPageSearch) return;
+            if ($(self._menu).is(':hidden')) return;
+            
             var coordsMenu = self._menu.getBoundingClientRect();
             var elem = document.elementFromPoint(self._menu.offsetWidth/2, coordsMenu.bottom + 50);
             
@@ -497,19 +504,21 @@
             
         };
     };
-    FixedElement.prototype.getStaticMenuPos = function () {
+    FixedMenu.prototype.getStaticMenuPos = function () {
+        if ($(this._menu).is(':hidden')) return;
+        
         this.toggleMenuPosition(true);
         this._staticMenuPosition = this.getCoords(this._menu).top;
         this.toggleMenuPosition();
     };
     
-    $.fn.fixedElem = function () {
+    $.fn.fixedMenu = function () {
         var options = typeof arguments[0] === 'object' ? arguments[0] : {};
         
         $(this).each(function () {
             options.menu = this;
             
-            var controller = new FixedElement(options);
+            var controller = new FixedMenu(options);
             controller.init();
         });
     };
@@ -597,7 +606,9 @@ $(document).ready(function () {
     (function(){
         var $topMenu = $('[data-component="fixedMenu"]');
     
-        $topMenu.fixedElem();
+        $topMenu.fixedMenu({
+            pageSearch: false
+        });
     })();
     
     
