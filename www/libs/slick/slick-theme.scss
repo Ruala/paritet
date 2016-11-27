@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@mixin transform($transform) {
+    -ms-transform: $transform;
+    -moz-transform: $transform;
+    -webkit-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
 // Default Variables
 
 // Slick icon entity codes outputs the following
@@ -63,13 +70,14 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-prev,
 .slick-next {
     position: absolute;
+    z-index: 5;
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 100px;
+    width: 55px;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.56);
     color: transparent;
     top: 50%;
     -webkit-transform: translate(0, -50%);
@@ -80,20 +88,21 @@ $slick-opacity-not-active: 0.25 !default;
     outline: none;
     &:hover, &:focus {
         outline: none;
-        background: transparent;
         color: transparent;
-        &:before {
+        &::before {
             opacity: $slick-opacity-on-hover;
         }
     }
     &.slick-disabled:before {
         opacity: $slick-opacity-not-active;
     }
-    &:before {
-        font-family: $slick-font-family;
-        font-size: 20px;
-        line-height: 1;
-        color: $slick-arrow-color;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-top: 1px solid $slick-arrow-color;
+        border-right: 1px solid $slick-arrow-color;
         opacity: $slick-opacity-default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -101,29 +110,29 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-    left: -25px;
+    left: 0;
     [dir="rtl"] & {
         left: auto;
-        right: -25px;
+        right: 0;
     }
-    &:before {
-        content: $slick-prev-character;
+    &::before {
+        @include transform(rotate(225deg));
         [dir="rtl"] & {
-            content: $slick-next-character;
+            @include transform(rotate(45deg));
         }
     }
 }
 
 .slick-next {
-    right: -25px;
+    right: 0;
     [dir="rtl"] & {
-        left: -25px;
+        left: 0;
         right: auto;
     }
-    &:before {
-        content: $slick-next-character;
+    &::before {
+        @include transform(rotate(45deg));
         [dir="rtl"] & {
-            content: $slick-prev-character;
+            @include transform(rotate(225deg));
         }
     }
 }

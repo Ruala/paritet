@@ -1,13 +1,17 @@
 /*Mobile menu*/
+@import 'variables';
+
 #m-menu:not( .mm-menu ) {
     display: none;
 }
 .mobile-nav {
     display: none;
-    height: 70px;
-    padding: 13px 0;
+    float: left;
+    width: 25%;
+    min-width: 70px;
+    height: 42px;
+    margin-top: -5px;
     background-color: transparent;
-    width: 100%;
     z-index: 50;
 }
 .menu-button {
@@ -27,7 +31,7 @@
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 40px;
     height: 4px;
-    background-color: #fff;
+    background-color: $green;
     border-radius: 4px;
     position: absolute;
 }
