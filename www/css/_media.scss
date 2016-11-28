@@ -92,6 +92,9 @@
     .mobile-nav {
         display: block;
     }
+    .pageheader {
+        padding-top: 120px;
+    }
     .pageheader__slider {
         height: 650px;
         .slide__info {
@@ -165,6 +168,7 @@
         display: none;
     }
     header {
+        top: 0;
         height: 80px;
         padding-top: 15px;
     }
@@ -186,6 +190,9 @@
             left: 10px;
         }
     }*/
+    .pageheader {
+        padding-top: 80px;
+    }
     .pageheader__slider {
         height: 400px;
         .title-box {

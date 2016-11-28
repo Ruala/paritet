@@ -242,10 +242,12 @@ a, button {
 }
 
 header {
+    position: absolute;
+    z-index: 50;
+    top: 57px;
     height: 140px;
     padding-top: 50px;
     background-color: #fff;
-    z-index: 50;
 }
 .header__links {
     float: left;
@@ -420,7 +422,7 @@ header {
 }
 
 .pageheader {
-    padding: 0;
+    padding: 140px 0 0;
     .container {
         max-width: 1920px;
         padding: 0;
@@ -576,6 +578,9 @@ header {
     .mobile-nav {
         display: block;
     }
+    .pageheader {
+        padding-top: 120px;
+    }
     .pageheader__slider {
         height: 650px;
         .slide__info {
@@ -609,6 +614,7 @@ header {
         display: none;
     }
     header {
+        top: 0;
         height: 80px;
         padding-top: 15px;
     }
@@ -620,6 +626,9 @@ header {
     }
     .mobile-nav {
         width: 20%;
+    }
+    .pageheader {
+        padding-top: 80px;
     }
     .pageheader__slider {
         height: 400px;
