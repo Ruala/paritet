@@ -526,11 +526,15 @@ $(document).ready(function () {
                 }
             ]
         };
-        
-        $(window).on('load', function () {
+        var timer = setInterval(init, 1000);
+    
+        function initSlider() {
+            if (!document.body.classList.contains('css-loaded')) return;
+    
             $mainPageHeaderSlider.slick(options);
             $workProcessSlider.slick(options);
-        });
+            clearTimeout(timer);
+        }
     })();
     
     /*fancybox*/
