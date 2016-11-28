@@ -1,0 +1,186 @@
+@media (max-width:1199px) {
+    .top-line {
+        .phone {
+            font-size: 16px;
+        }
+        form {
+            width: 35%;
+        }
+        .lang {
+            margin-left: 10px;
+        }
+    }
+    .top-menu > li > a {
+        padding: 23px 10px 24px;
+        text-transform: uppercase;
+    }
+}
+@media (max-width: 1023px) {
+    .top-line .phone {
+        margin: 2px 10px 0;
+    }
+    .top-menu > li > a {
+        font-size: 11px;
+    }
+}
+
+/* Small devices */
+@media (max-width: 991px) {
+    .top-line {
+        .phone {
+            display: none;
+        }
+        form {
+            width: 50%;
+            margin: 0 20px;
+        }
+    }
+    header {
+        height: 120px;
+        padding-top: 45px;
+    }
+    .header__links {
+        display: none;
+    }
+    .header__logo {
+        width: 39%;
+    }
+    .header__btn {
+        width: 36%;
+    }
+    .navbar {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+    .pageheader {
+        padding-top: 120px;
+    }
+    .pageheader__slider {
+        height: 650px;
+        .slide__info {
+            top: 45%;
+        }
+        .title-box {
+            padding: 20px 40px;
+            font-size: 24px;
+        }
+        .about-box {
+            padding-left: 60px;
+        }
+        .contact-box {
+            padding-left: 30px;
+        }
+    }
+    .banner__info {
+        left: 50px;
+    }
+    .about-company img + p {
+        padding-top: 0;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px;
+    }
+    .top-line {
+        display: none;
+    }
+    header {
+        top: 0;
+        height: 80px;
+        padding-top: 15px;
+    }
+    .header__logo {
+        width: 35%;
+    }
+    .header__btn {
+        width: 45%;
+    }
+    .mobile-nav {
+        width: 20%;
+    }
+    .pageheader {
+        padding-top: 80px;
+    }
+    .pageheader__slider {
+        height: 400px;
+        .title-box {
+            font-size: 18px;
+        }
+        .slide__info {
+            width: 75%;
+            top: 30%;
+            left: 42%;
+        }
+        .about-box {
+            padding-left: 50px;
+            font-size: 14px;
+        }
+        .contact-box {
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 599px) {
+    .header__logo {
+        width: 45%;
+    }
+    .header__btn {
+        width: 36%;
+        float: right;
+    }
+    .mobile-nav {
+        width: 15%;
+        min-width: 50px;
+    }
+    .hamburger {
+        width: 50px;
+        padding: 5px 15px 9px 0;
+    }
+    .ordered-transportation-btn {
+        padding: 9px 10px;
+        margin-top: 0;
+        font-size: 10px;
+        &::before {
+            display: none;
+        }
+    }
+    .pageheader__slider {
+        .slide__info {
+            width: 85%;
+            @include transform(skew(-10deg) translate(-50%, -50%));
+            p, ul {
+                @include transform(skew(10deg));
+            }
+        }
+        .title-box {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .about-box {
+            padding: 10px 10px 10px 30px;
+            font-size: 12px;
+        }
+        .contact-box {
+            padding: 10px 10px 10px 20px;
+            font-size: 12px;
+        }
+    }
+    .bread-crumbs {
+        display: none;
+    }
+    .banner__info {
+        width: 100%;
+        left: 0;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    .about-company p {
+        font-size: 14px;
+    }
+}
