@@ -527,8 +527,10 @@ $(document).ready(function () {
             ]
         };
         
-        $mainPageHeaderSlider.slick(options);
-        $workProcessSlider.slick(options);
+        $(window).on('load', function () {
+            $mainPageHeaderSlider.slick(options);
+            $workProcessSlider.slick(options);
+        });
     })();
     
     /*fancybox*/
