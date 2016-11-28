@@ -79,6 +79,8 @@ Loader.prototype.addCss = function(links, parentEl, nextSibling) {
 
         triggeredEl.dispatchEvent(linkAddedEvent);
     }
+    
+    document.body.classList.add('css-loaded');
 };
 Loader.prototype.createCss = function(href) {
     var link = document.createElement('link');

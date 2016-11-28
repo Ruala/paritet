@@ -288,7 +288,7 @@ header {
 .calculator-icon::before {
     background-position: -64px 0;
 }
-#m-menu:not( .mm-menu ) {
+body:not(.css-loaded) #m-menu, #m-menu:not( .mm-menu ) {
     display: none;
 }
 .mobile-nav {
@@ -529,7 +529,7 @@ header {
     display: none;
 }
 
-.slick-initialized .slide {
+body.css-loaded .slick-initialized .slide {
     display: block;
 }
 
