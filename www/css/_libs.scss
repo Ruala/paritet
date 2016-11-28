@@ -115,7 +115,7 @@ html.mm-opening .hamburger--collapse .hamburger-inner::before {
     position: fixed!important;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 991px) {
     .js-top-fixed-mobile {
         top: 0!important;
         left: 0!important;
@@ -128,4 +128,13 @@ html.mm-opening .hamburger--collapse .hamburger-inner::before {
 }
 .form-fail {
     border-color: red!important;
+}
+
+/*slider*/
+.slide + .slide {
+    display: none;
+}
+
+.slick-initialized .slide {
+    display: block;
 }

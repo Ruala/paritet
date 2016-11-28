@@ -154,7 +154,7 @@ function init(){
         'libs/mmenu/jquery.mmenu.min.css',
         'libs/slick/slick.min.css',
         'libs/slick/slick-theme.min.css',
-        'libs/mmenu/styles.min.css'
+        'css/styles.min.css'
     ];
     
     

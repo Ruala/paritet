@@ -513,13 +513,22 @@ $(document).ready(function () {
     (function(){
     	var $mainPageHeaderSlider = $('.pageheader__slider');
         var $workProcessSlider = $('.work-process__slider');
+        var options = {
+            fade: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        };
         
-        $mainPageHeaderSlider.slick({
-            fade: true
-        });
-        $workProcessSlider.slick({
-            fade: true
-        });
+        $mainPageHeaderSlider.slick(options);
+        $workProcessSlider.slick(options);
     })();
     
     /*fancybox*/
