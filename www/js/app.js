@@ -526,10 +526,19 @@ $(document).ready(function () {
                 }
             ]
         };
-        var timer = setInterval(init, 1000);
+        var timerCounter = 0;
+        var timer = setInterval(initSlider, 1000);
     
         function initSlider() {
-            if (!document.body.classList.contains('css-loaded')) return;
+            if (!document.body.classList.contains('css-loaded') && timerCounter < 30) {
+                timerCounter++;
+                return;
+            }
+            
+            if (timerCounter >= 30) {
+                clearTimeout(timer);
+                return;
+            }
     
             $mainPageHeaderSlider.slick(options);
             $workProcessSlider.slick(options);
