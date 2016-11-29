@@ -121,6 +121,9 @@ button {
     background-image: url("img/sprite.png");
     background-position: -128px 0; }
 
+.btn-mobile {
+  display: none; }
+
 .more-btn {
   position: absolute;
   z-index: 2;
@@ -218,6 +221,7 @@ header {
   position: absolute;
   z-index: 50;
   top: 57px;
+  min-width: 320px;
   height: 140px;
   padding-top: 50px;
   background-color: #fff; }
@@ -602,11 +606,17 @@ body.css-loaded .slick-initialized .slide {
     padding: 5px 15px 9px 0; }
 
   .ordered-transportation-btn {
-    padding: 9px 10px;
+    padding: 9px 30px;
     margin-top: 0;
     font-size: 10px; }
     .ordered-transportation-btn::before {
       display: none; }
+
+  .btn-mobile {
+    display: block; }
+
+  .btn-desctop {
+    display: none; }
 
   .pageheader__slider .slide__info {
     width: 85%;
