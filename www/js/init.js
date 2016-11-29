@@ -145,9 +145,11 @@ Loader.prototype.detectIE = function () {
 };
 
 
+var loader = new Loader();
+
 /*Loading scripts and css*/
 function init(){
-    var loader = new Loader();
+    
     
     /*adding css*/
     var cssArr = [
@@ -164,13 +166,15 @@ function init(){
 }
 
 
+init();
+
 /*if body not ready waiting for it*/
-(function(){
+/*(function(){
     if (document.body) {
         init();
     } else {
         document.addEventListener("DOMContentLoaded", init);
     }
-})();
+})();*/
 
 

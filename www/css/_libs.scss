@@ -1,7 +1,7 @@
 /*Mobile menu*/
 @import 'variables';
 
-#m-menu:not( .mm-menu ) {
+body:not(.css-loaded) #m-menu, #m-menu:not( .mm-menu ) {
     display: none;
 }
 .mobile-nav {

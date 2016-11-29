@@ -1,7 +1,7 @@
 /*Import fonts from Google fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic&subset=cyrillic);
 /*Mobile menu*/
-#m-menu:not(.mm-menu) {
+body:not(.css-loaded) #m-menu, #m-menu:not(.mm-menu) {
   display: none; }
 
 .mobile-nav {
