@@ -398,6 +398,9 @@ body:not(.css-loaded) #m-menu, #m-menu:not(.mm-menu) {
   overflow: hidden; }
   .pageheader__slider img {
     width: auto; }
+  .pageheader__slider .slide {
+    position: relative;
+    z-index: 2; }
   .pageheader__slider .slide__info {
     position: absolute;
     z-index: 2;

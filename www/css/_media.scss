@@ -92,7 +92,8 @@
     }
     .category__block:hover {
         > h2 {
-            display: block;
+            visibility: visible;
+            opacity: 1;
         }
         .category__info {
             display: none;

@@ -1845,6 +1845,9 @@ header {
   overflow: hidden; }
   .pageheader__slider img {
     width: auto; }
+  .pageheader__slider .slide {
+    position: relative;
+    z-index: 2; }
   .pageheader__slider .slide__info {
     position: absolute;
     z-index: 2;
@@ -2906,7 +2909,8 @@ Pop up
     bottom: 20px; }
 
   .category__block:hover > h2 {
-    display: block; }
+    visibility: visible;
+    opacity: 1; }
   .category__block:hover .category__info {
     display: none; }
 

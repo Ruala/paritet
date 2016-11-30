@@ -439,6 +439,10 @@ body:not(.css-loaded) #m-menu, #m-menu:not( .mm-menu ) {
     img {
         width: auto;
     }
+    .slide {
+        position: relative;
+        z-index: 2;
+    }
     .slide__info {
         position: absolute;
         z-index: 2;
